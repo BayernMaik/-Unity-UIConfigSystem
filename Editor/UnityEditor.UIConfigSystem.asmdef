@@ -1,9 +1,13 @@
 {
-    "name": "com.unity.uiconfig",
+    "name": "UnityEditor.UIConfigSystem",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:4f8bae182c8430db58687d8ebb58dd1a"
+    ],
     "includePlatforms": [],
-    "excludePlatforms": [],
+    "excludePlatforms": [
+        "Editor"
+    ],
     "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],
