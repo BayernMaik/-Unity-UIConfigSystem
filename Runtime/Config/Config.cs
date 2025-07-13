@@ -6,7 +6,7 @@ namespace UI
     public class Config<T, U> : ConfigBase<T>
     {
         #region Attributes
-        [SerializeField] private U data;
+        [SerializeField] protected U data;
         #endregion
         #region Properties
         public U Data

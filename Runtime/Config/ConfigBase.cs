@@ -6,7 +6,7 @@ namespace UI
     public abstract class ConfigBase<T>
     {
         #region Attributes
-        [SerializeField] private T reference;
+        [SerializeField] protected T reference;
         #endregion
         #region Properties
         public T Reference
