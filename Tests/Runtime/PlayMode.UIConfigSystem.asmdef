@@ -1,14 +1,12 @@
 {
-    "name": "EditMode",
+    "name": "PlayMode.UIConfigSystem",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "UnityEditor.UIConfigSystem"
+        "UnityEngine.UIConfigSystem"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
