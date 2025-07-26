@@ -1,41 +1,87 @@
+using System;
 using UnityEngine;
 
 namespace UI
 {
-    [System.Serializable]
+    /// <summary>
+    /// Config to map a key of specified type with a value of specified type
+    /// </summary>
+    /// <typeparam name="T">Type for Config's key</typeparam>
+    /// <typeparam name="U">Type for Config's value</typeparam>
+    [Serializable]
     public class Config<T, U> : ConfigBase<T>
     {
         #region Attributes
-        [SerializeField] protected U data;
+        /// <summary>
+        /// Config value
+        /// </summary>
+        [SerializeField] protected U value;
         #endregion
         #region Properties
-        public U Data
+        /// <summary>
+        /// Config value
+        /// </summary>
+        public U Value
         {
-            get { return this.data; }
-            set { this.data = value; }
+            get { return this.value; }
+            set { this.value = value; }
         }
         #endregion
         #region Constructors
-        public Config(){}
-        public Config(T reference) : base(reference){}
-        public Config(U data)
+        /// <summary>
+        /// Default Constructor for Config
+        /// </summary>
+        public Config() { }
+        /// <summary>
+        /// Parameter Constructor for Config
+        /// </summary>
+        /// <param name="key">Key for Config</param>
+        public Config(T key) : base(key) { }
+        /// <summary>
+        /// Parameter Constructor for Config
+        /// </summary>
+        /// <param name="value">Value for Config</param>
+        public Config(U value)
         {
-            this.data = data;
+            this.value = value;
         }
+        /// <summary>
+        /// Parameter Constructor for Config
+        /// </summary>
+        /// <param name="reference"></param>
+        /// <param name="data"></param>
         public Config(T reference, U data) : base(reference)
         {
-            this.data = data;
+            this.value = data;
         }
         #endregion
         #region Methods
-        public U GetData()
+        /// <summary>
+        /// Set value to Config
+        /// </summary>
+        /// <param name="value"></param>
+        public void SetValue(U value)
         {
-            return this.data;
+            this.value = value;
         }
-        public void SetData(U data)
+        /// <summary>
+        /// Get value from Config
+        /// </summary>
+        /// <returns></returns>
+        public U GetValue()
         {
-            this.data = data;
+            return this.value;
         }
+        /*
+        public U GetValue<U>() // IConfig
+        {
+            if (this.value != null && this.value is U)
+            {
+                return (U)Convert.ChangeType(this.value, typeof(U));
+            }
+            return default(U);
+        }
+        */
         #endregion
     }
 }
